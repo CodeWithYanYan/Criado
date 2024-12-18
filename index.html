@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Catalog</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+    <style>
+        body {
+            font-family: Roboto;
+        }
+    </style>
+<body class="bg-dark">
+    <header class="bg-dark text-light p-3">
+        <div class="row m-0">
+            <div class="col-4 ">
+                <h1 class="fw-bold mb-0">Movie Catalog</h1>
+            </div>
+            <div class="col-8">
+                <div class="d-flex align-items-center justify-content-between h-100">
+                    <ul class="d-flex list-unstyled mb-0 justify-content-around w-50 fw-light">
+                        <li><a href="" class="text-decoration-none text-light">HOME</a></li>
+                        <li><a href="" class="text-decoration-none text-light">ABOUT</a></li>
+                        <li><a href="" class="text-decoration-none text-light">MOST POPULAR</a></li>
+                        <li><a href="" class="text-decoration-none text-light">NEWS</a></li>
+                        <li><a href=""  class="text-decoration-none text-light"> CONTACT</a></li>
+                    </ul>
+                    <div class="input-group w-50">
+                        <input type="text" class="form-control" placeholder="Search movies....">
+                        <button class="input-group-item btn btn-secondary"> <i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="p-1 bg-danger">
+        <ul class="list-unstyled m-0 p-1  d-flex fw-bolder align-items-center justify-content-around">
+            <li><a href="" class="text-decoration-none text-light fs-5">CINEMA MOVIES</a></li>
+            <li><a href="" class="text-decoration-none text-light fs-5">TV SERIES</a></li>
+            <li><a href="" class="text-decoration-none text-light fs-5">CARTOONS</a></li>
+            <li><a href="" class="text-decoration-none text-light fs-5">ANIME</a></li>
+            <li><a href="" class="text-decoration-none text-light fs-5">NEW MOVIES</a></li>
+            <li><a href="" class="text-decoration-none text-light fs-5">HD MOVIES</a></li>
+        </ul>
+    </nav>
+    <div class="container-fluid p-0 " style="height: 50%;">
+        <div class="card text-bg-dark ">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="thumb-1920-699107.jpg" class="d-block w-100 h-100" alt="..." style="object-fit: contain;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="2145062.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+            <div class="card-img-overlay">  
+            <div class="container position-absolute top-50 start-50 translate-middle">
+                <h1 class="fw-bold text-center">Mad Max</h3>
+                <p class="fw-lighter text-center fs-4"> In a self-destructing world, a vengeful Australian policeman sets out to stop a violent motorcycke gang.</p>
+                <div class="d-flex column-gap-4 justify-content-center">
+                    <a href="" id="add-movie-btn" class="btn btn-lg btn-danger fw-lighter rounded-pill p-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">ADD MOVIES</a>
+                    <a href="" class="btn btn-lg btn-outline-light rounded-pill p-4 fw-ligher ">LEARN MORE</a>
+                </div>
+            </div>
+            </div>
+          </div>
+    </div>
+        <!-- Modal -->
+        <!-- Modal Structure -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog p-4 position-absolute top-50 start-50 translate-middle" style="width: 100%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">List Movies</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="movie-form" class="d-flex flex-column row-gap-2">
+                    <label for="title" class="fw-bold">Title:</label>
+                    <input type="text" class="form-control rounded-pill p-2" id="title" name="title" required>
+
+                    <label for="year" class="fw-bold">Release Year:</label>
+                    <input type="number" class="form-control rounded-pill p-2" id="year" name="year" required>
+
+                    <label for="duration" class="fw-bold">Duration:</label>
+                    <input type="text" class="form-control rounded-pill p-2" id="duration" name="duration" required>
+
+                    <label for="language" class="fw-bold">Language:</label>
+                    <input type="text" class="form-control rounded-pill p-2" id="language" name="language" required>
+
+                    <label for="country" class="fw-bold">Country:</label>
+                    <input type="text" class="form-control rounded-pill p-2" id="country" name="country" required>
+
+                    <button type="submit" id="add-movie-btn"  class="btn btn-danger rounded-pill">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="crud.html"><button type="button" class="btn btn-dark"  data-bs-dismiss="modal">Update Movies</button> </a> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Display Movie List -->
+<div id="movie-list" class="mt-4"></div>
+        
+    <footer class="px-3 text-light" style="height: 300px;">
+        <div>
+            <div class="row text-center">
+                <div class="col pt-2">
+                    <h3 class="text-light fw-light">MOVIE CATALOG</h3>
+                </div>
+                <div class="col pt-2">
+                    <p>WEEBLY THEMES</p>
+                    <p>PRE-SALE FAQS</p>
+                    <p>SUBMIT A TICKET</p>
+                </div>
+                <div class="col pt-2">
+                    <p>SERVICES</p>
+                    <p>THEME TWEAK</p>
+                </div>
+                <div class="col pt-2">
+                        <p>SHOWCASE</p>
+                        <p>WIDGET</p>
+                        <p>SUPPORT</p>
+                </div>
+                <div class="col pt-2">
+                    <p>ABOUT US</p>
+                    <p>CONTACT US</p>
+                    <p>AFFILIATE</p>
+                    <p>RESOURCES</p>
+            </div>
+            </div>
+            <hr>
+            <div class="text-center ">
+                <i class="bi bi-facebook fs-3 mx-3"></i>
+                <i class="bi bi-youtube fs-3 mx-3"></i>
+                <i class="bi bi-instagram fs-3 mx-3"></i>
+                <i class="bi bi-google fs-3 mx-3"></i>
+                <i class="bi bi-google-play fs-3 mx-3"></i>
+            </div>
+            <hr>
+        </div>
+    </footer>
+    
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const movieForm = document.getElementById("movie-form");
+    const modal = document.getElementById("movie-modal");
+
+    movieForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById("title").value;
+        const year = document.getElementById("year").value;
+        const duration = document.getElementById("duration").value;
+        const language = document.getElementById("language").value;
+        const country = document.getElementById("country").value;
+
+        // Save the movie data to localStorage
+        const newMovie = {
+            title,
+            year,
+            duration,
+            language,
+            country
+        };
+
+        // Retrieve existing movies from localStorage or initialize empty array
+        let movies = JSON.parse(localStorage.getItem("movies")) || [];
+
+        // Add the new movie to the array
+        movies.push(newMovie);
+
+        // Save the updated array to localStorage
+        localStorage.setItem("movies", JSON.stringify(movies));
+
+        // Close modal and reset form
+        modal.style.display = "none";
+        movieForm.reset();
+    });
+});
+
+</script>
+<script src="crud.js"></script>
+<!--script for  boostrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
